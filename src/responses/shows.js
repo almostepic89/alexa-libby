@@ -19,3 +19,5 @@ export const REPROMPT_NO = tmpl`Ok, did you mean ${0}?`;
 
 /** ${0: Show Name} */
 export const REPROMPT_YES = tmpl`Added ${0} to your list of shows to download.`;
+
+export const UPDATE_MISSING_SHOWS = tmpl`Searching for missing episodes from your list.`;
