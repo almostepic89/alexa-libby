@@ -262,7 +262,7 @@
                         "search for missing movies",
                         "update my movies"
                     ]
-                }
+                },
                 {
                     "name": "UpdateMissingShows",
                     "slots": [],
