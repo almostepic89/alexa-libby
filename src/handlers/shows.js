@@ -8,7 +8,8 @@ import {
   ADD_SHOW,
   ALREADY_WANTED,
   NO_SHOW_FOUND,
-  NO_SHOW_QUEUED
+  NO_SHOW_QUEUED,
+  UPDATE_MISSING_SHOWS
 } from '~/responses/shows.js';
 
 export async function handleFindShowIntent(req, resp) {
@@ -57,4 +58,12 @@ export async function handleAddShowIntent(req, resp) {
     .say(ADD_SHOW(shows[0].title))
     .session('promptData', buildReprompt(shows, PROVIDER_TYPE.SHOWS))
     .shouldEndSession(false);
+}
+
+export async function handleMissingShowIntent(req, resp) {
+	const api = getProvider(PROVIDER_TYPE.SHOWS);
+	const result = api.update();
+	return resp
+		.say(UPDATE_MISSING_SHOWS())
+		.shouldEndSession(true);
 }
