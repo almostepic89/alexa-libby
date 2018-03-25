@@ -31,3 +31,5 @@ export const REPROMPT_NO = tmpl`Ok, did you mean ${0} (${1})?`;
 
 /** ${0: Movie Title}, ${1: Release date} */
 export const REPROMPT_YES = tmpl`Added ${0} (${1}) to your wanted list.`;
+
+export const UPDATE_MISSING_MOVIES = tmpl`Searching for missing movies from your list.`;
