@@ -263,6 +263,16 @@
                         "update my movies"
                     ]
                 }
+                {
+                    "name": "UpdateMissingShows",
+                    "slots": [],
+                    "samples": [
+                        "search for missing shows",
+                        "search for missing episodes",
+                        "update my shows",
+                        "update my episodes"
+                    ]
+                }
             ],
             "types": []
         }
