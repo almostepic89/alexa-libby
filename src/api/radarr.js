@@ -87,6 +87,14 @@ export async function add(movie) {
   });
 }
 
+export async function update() {
+	return await radarr().post('command', {
+		name: 'missingMoviesSearch',
+		filterKey: 'monitored',
+		filtervalue: 'releaed'
+	});
+}
+
 async function loadQualityProfiles() {
   if (!_qualityProfiles) {
     _qualityProfiles = await radarr().get('profile');

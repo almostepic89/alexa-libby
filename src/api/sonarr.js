@@ -110,6 +110,12 @@ function mapToMediaResult(show) {
   };
 }
 
+export async function update() {
+	return await sonarr().post('command', {
+		name: 'missingEpisodeSearch'
+	});
+}
+
 function getPreferredQuality() {
   const path = `alexa-libby.${PROVIDER_TYPE.SHOWS}.quality`;
 

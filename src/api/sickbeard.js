@@ -68,6 +68,9 @@ export async function search(query) {
   }) : [];
 }
 
+export async function update() {
+	return await sickbeard().cmd('sb.forcesearch');
+}
 /**
  * Adds a show to the library.
  *

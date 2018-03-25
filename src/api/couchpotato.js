@@ -42,6 +42,11 @@ export async function search(query) {
   return Array.isArray(movies) ? movies.map(formatMovieResult) : [];
 }
 
+export async function update() {
+	return result = await coughpotato().get('movie.searcher.full_search');
+}
+	
+
 /**
  * Adds a movie to the library.
  *
