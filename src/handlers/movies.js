@@ -10,7 +10,8 @@ import {
   ADD_PROMPT,
   ALREADY_WANTED,
   NO_MOVIE_FOUND,
-  NO_MOVIE_SLOT
+  NO_MOVIE_SLOT,
+  UPDATE_MISSING_MOVIES
 } from '~/responses/movies.js';
 
 export async function handleFindMovieIntent(req, resp) {
@@ -74,6 +75,15 @@ export async function handleAddMovieIntent(req, resp) {
   }
 
   return Promise.resolve(resp);
+}
+
+export async function handleMissingIntent(req, resp) {
+	const api = getProvider(PROVIDER_TYPE.MOVIES);
+	resp
+		.say(UPDATE_MISSING_MOVIES())
+		.shouldEndSession(true);
+	const result = await api.update();
+	return Promise.resolve(resp);
 }
 
 function buildQuery(req) {
